@@ -1,39 +1,39 @@
 package CLASES;
-
+import java.util.List;
 public class Guia extends Usuario {
-    private String ciudades;
-    private String paises;
-    private ServicioOfrecido serviciosOfrecidos;
+	 private List<String> ciudades;
+	 private List<String> paises;
+     private List<ServicioOfrecido> servicios ;
 
     public Guia(String nombre, String apellido, String sexo, int dni, String email, int telefono,
-                String ciudades, String paises) {
+    		 List<String> ciudades,  List<String> paises, List<ServicioOfrecido> servicios) {
         super(nombre, apellido, sexo, dni, email, telefono);
         this.ciudades = ciudades;
         this.paises = paises;
+        this.servicios = servicios;
     }
 
-    public String getCiudades() {
+    public List<String> getCiudades() {
         return ciudades;
     }
 
-    public void setCiudades(String ciudades) {
+    public void setCiudades(List<String> ciudades) {
         this.ciudades = ciudades;
     }
 
-    public String getPaises() {
+    public List<String> getPaises() {
         return paises;
     }
 
-    public void setPaises(String paises) {
+    public void setPaises(List<String> paises) {
         this.paises = paises;
     }
-
-    public ServicioOfrecido getServiciosOfrecidos() {
-        return serviciosOfrecidos;
+    public List<ServicioOfrecido> getServiciosOfrecidos() {
+        return servicios;
     }
 
-    public void setServiciosOfrecidos(ServicioOfrecido serviciosOfrecidos) {
-        this.serviciosOfrecidos = serviciosOfrecidos;
+    public void setServiciosOfrecidos(List<ServicioOfrecido> servicios) {
+        this.servicios = servicios;
     }
 
     @Override
@@ -44,10 +44,10 @@ public class Guia extends Usuario {
     }
 
     public void agregarServicio(ServicioOfrecido servicio) {
-        serviciosOfrecidos.add(servicio);
+    	servicios.add(servicio);
     }
 
     public void eliminarServicio(ServicioOfrecido servicio) {
-        serviciosOfrecidos.remove(servicio);
+        servicios.remove(servicio);
     }
 }
