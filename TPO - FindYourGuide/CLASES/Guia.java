@@ -1,30 +1,53 @@
 package CLASES;
 
-public class Guia {
-	
-	private String Pais;
-	private String Ciudad;
-	private Credencial Credencial;
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public class Guia extends Usuario {
+    private String ciudades;
+    private String paises;
+    private ServicioOfrecido serviciosOfrecidos;
 
-	}
+    public Guia(String nombre, String apellido, String sexo, int dni, String email, int telefono,
+                String ciudades, String paises) {
+        super(nombre, apellido, sexo, dni, email, telefono);
+        this.ciudades = ciudades;
+        this.paises = paises;
+    }
 
-	public String getPais() {
-		return Pais;
-	}
+    public String getCiudades() {
+        return ciudades;
+    }
 
-	public void setPais(String pais) {
-		this.Pais = pais;
-	}
+    public void setCiudades(String ciudades) {
+        this.ciudades = ciudades;
+    }
 
-	public String getCiudad() {
-		return Ciudad;
-	}
+    public String getPaises() {
+        return paises;
+    }
 
-	public void setCiudad(String ciudad) {
-		this.Ciudad = ciudad;
-	}
+    public void setPaises(String paises) {
+        this.paises = paises;
+    }
 
+    public ServicioOfrecido getServiciosOfrecidos() {
+        return serviciosOfrecidos;
+    }
+
+    public void setServiciosOfrecidos(ServicioOfrecido serviciosOfrecidos) {
+        this.serviciosOfrecidos = serviciosOfrecidos;
+    }
+
+    @Override
+    public void actualizarPerfil(String nombre, String email) {
+        this.setNombre(nombre);
+        this.setEmail(email);
+        System.out.println("Perfil del guía actualizado. Nuevo nombre: " + this.getNombre() + ", Nuevo email: " + this.getEmail());
+    }
+
+    public void agregarServicio(ServicioOfrecido servicio) {
+        serviciosOfrecidos.add(servicio);
+    }
+
+    public void eliminarServicio(ServicioOfrecido servicio) {
+        serviciosOfrecidos.remove(servicio);
+    }
 }

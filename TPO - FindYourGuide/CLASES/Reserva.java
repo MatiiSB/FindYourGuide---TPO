@@ -12,6 +12,17 @@ public class Reserva {
 	
 	
 	
+	public Reserva(String estado, Date fechaDeInicio, Date fechaFin, int montoDeAnticipo, CLASES.Viaje viaje) {
+		super();
+		Estado = estado;
+		FechaDeInicio = fechaDeInicio;
+		FechaFin = fechaFin;
+		MontoDeAnticipo = montoDeAnticipo;
+		Viaje = viaje;
+	}
+
+
+
 	public String getEstado() {
 		return Estado;
 	}

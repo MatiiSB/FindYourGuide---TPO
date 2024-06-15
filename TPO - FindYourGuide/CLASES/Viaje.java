@@ -12,6 +12,17 @@ public class Viaje {
 	private int MontoTotal;
 	private Reserva Reserva;
 	
+	public Viaje(int idViaje, CLASES.ServicioOfrecido servicioOfrecido, String destino, Date fechaInicio, Guia guiaAsociado, int montoTotal, CLASES.Reserva reserva) {
+		super();
+		IdViaje = idViaje;
+		ServicioOfrecido = servicioOfrecido;
+		Destino = destino;
+		FechaInicio = fechaInicio;
+		GuiaAsociado = guiaAsociado;
+		MontoTotal = montoTotal;
+		Reserva = reserva;
+	}
+
 	public int getIdViaje() {
 		return IdViaje;
 	}
