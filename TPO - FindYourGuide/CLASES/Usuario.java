@@ -9,10 +9,6 @@ public abstract class Usuario {
 	private String email;
 	private int telefono;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 	
     public Usuario(String nombre, String apellido, String sexo, int dni, String email, int telefono) {
         this.nombre = nombre;
