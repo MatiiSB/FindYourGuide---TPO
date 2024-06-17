@@ -1,11 +1,15 @@
 package CLASES;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import CONTROLLERS.usuarioDTO;
+import CONTROLLERS.UsuarioController;
 
 public class Sistema {
 	private List<Usuario> usuarios;
 
-    public Sistema(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
+    public Sistema() {
+        this.usuarios = new ArrayList<>();
 
     }
     
@@ -22,10 +26,67 @@ public class Sistema {
     
     
     public static void main(String[] args) {
-        ServicioOfrecido servicios = new ArrayList<>();
-        ServicioOfrecido servicio1 = new ServicioOfrecido("Tour Guiado", "Tour por la ciudad");
-        servicios.add(servicio1);
+    	
+    	//Instancias iniciale del sistema Global
+    	Sistema sistema = new Sistema();
+    	Scanner Scanner = new Scanner(System.in);
+    	
+        ServicioOfrecido servicio1 = new ServicioOfrecido("Tour Individual", "Tour armado especialmente para vos");
+        ServicioOfrecido servicio2 = new ServicioOfrecido("Traducciones", "Traduccion unicmanete en Italiano");
+        ServicioOfrecido servicio3 = new ServicioOfrecido("Tour Grupal", "Tour para entre 3 a 8 personas");
+        
+        
+        
+        while(true) {
+        	
+        	System.out.println("¡Bienvenido a FindYourGuide!");System.out.println("");System.out.println("");
 
+        	System.out.println("1- Crear nueva cuenta");
+        	System.out.println("2- Iniciar sesion");
+        	
+        	int opcionAcceso = Scanner.nextInt();
+        	
+        	switch(opcionAcceso) {
+        	
+        	case 1: //REGISTRO
+        		System.out.print("Por favor, seleccione su rol (Guia/Turista): ");
+        		String rol = Scanner.nextLine();
+        		
+        		if (rol.equalsIgnoreCase("Turista")) {
+        			System.out.println("Nombre:");
+        			String name = Scanner.nextLine();
+        			System.out.println("Apellido:");
+        			String apellido = Scanner.nextLine();
+        			System.out.println("Sexo: (M/F)");
+        			String sexo = Scanner.nextLine();
+        			System.out.println("DNI:");
+        			int DNI = Scanner.nextInt();
+        			System.out.println("Email:");
+        			//Verificacion para ver si el mail ya existe
+        			String mail = Scanner.nextLine();
+        			System.out.println("Telefono:");
+        			int telefono = Scanner.nextInt();
+        			
+       
+        			usuarioDTO uDTO = new usuarioDTO(name,apellido,sexo,DNI,mail,telefono);
+        		//else guia
+        			
+        		Usuario nuevoUsuario = UsuarioController.registrarUsuario(uDTO,rol);
+        		}
+        		
+        		
+        		
+        		
+        	}
+        	
+        	
+        	}
+        	
+        //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        	
+        
+        
+        
         List<String> ciudades = new ArrayList<>();
         ciudades.add("Buenos Aires");
 
